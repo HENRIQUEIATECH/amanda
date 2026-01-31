@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanda Assessoria | Pessoal, Empresarial e Política</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS GERAL */
+        :root {
+            --primary-blue: #1a27db;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .logo-container img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 15px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+
+        /* SECTION 1 - HERO */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.1)), url('https://plus.unsplash.com/premium_photo-1661412785912-954614f6ebfd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Substituir por sua imagem */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            max-width: 800px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .divider {
+            height: 5px;
+            background-color: var(--gold);
+            width: 100%;
+        }
+
+        /* SECTION 2 - MÓDULOS */
+        .modules {
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            padding: 30px;
+            background: white;
+            border: 1px solid #eee;
+            border-top: 5px solid var(--primary-blue);
+            transition: transform 0.3s;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-top-color: var(--gold);
+        }
+
+        .card i {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        /* SEÇÕES DE TEXTO */
+        section.content-box {
+            padding: 80px 20px;
+            max-width: 100% !important; /* Ajustado para permitir background total */
+            margin: 0 auto;
+        }
+
+        .container-text {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2.section-title {
+            color: var(--primary-blue);
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+        }
+
+        /* SECTION 3 - QUEM SOMOS (COM FOTO REDONDA) */
+        .quem-somos { padding: 60px 10%; text-align: center; background: var(--white); }
+        .quem-somos h2 { color: var(--primary-blue); margin-bottom: 20px; }
+        .profile-container { margin-top: 30px; position: relative; display: inline-block; }
+        .img-redonda {
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--gold); /* O filete dourado */
+            padding: 5px; /* Espaço para o efeito de filete duplo */
+            background: var(--primary-blue); /* Filete azul ao fundo */
+        }
+
+        /* BACKGROUNDS SOLICITADOS (HISTÓRIA E CONTATO) */
+        #historia {
+            background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1580894723150-0ff6e9b907ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #contato {
+            background: linear-gradient(rgba(26, 39, 219, 0.05), rgba(26, 39, 219, 0.05)), url('contato-background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* CONTATO */
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            nav ul { flex-direction: column; gap: 10px; }
+            .hero h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Amanda Assessoria Logo">
+        </div>
+        <h1>Amanda Assessoria</h1>
+        <nav>
+            <ul>
+                <li><a href="#quem-somos">Quem Somos</a></li>
+                <li><a href="#assessoria">Assessoria</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://wa.me/SEUNUMERO" target="_blank">WhatsApp</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Suporte estratégico e operacional para otimizar seu tempo e potencializar seus resultados.</h2>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="assessoria" class="modules">
+        <div class="card">
+            <i class="fas fa-user-tie"></i>
+            <h3>Assessoria Pessoal</h3>
+            <p>Focada em facilitar a vida cotidiana e profissional de executivos e pessoas de alto padrão. Gestão de agenda, viagens e concierge personalizado.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Assessoria Empresarial</h3>
+            <p>Melhoria de eficiência e produtividade. Gestão estratégica, financeira, marketing corporativo e consultoria operacional.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-landmark"></i>
+            <h3>Assessoria Política</h3>
+            <p>Gerenciamento de imagem e relações institucionais. Atuação legislativa, gestão de gabinete e comunicação estratégica.</p>
+        </div>
+    </section>
+
+    <section id="quem-somos" class="content-box">
+        <div class="container-text">
+            <h2 class="section-title">Quem Somos</h2>
+            <p style="text-align: center;">A Amanda Assessoria é uma empresa dedicada a prestar suporte técnico e estratégico de alto nível. Nossa missão é oferecer organização, confidencialidade e proatividade para que nossos clientes foquem no que realmente importa.</p>
+            
+            <center>
+                <div class="profile-container">
+                    <img src="amanda.png" alt="Amanda Assessora" class="img-redonda">
+                </div>
+            </center>
+        </div>
+    </section>
+
+    <section id="historia" class="content-box">
+        <div class="container-text">
+            <h2 class="section-title">História</h2>
+            <p style="text-align: center; font-weight: 500;">Nascida da necessidade de um atendimento personalizado no mercado de gestão, a Amanda Assessoria consolidou-se unindo expertise nas áreas administrativa, corporativa e pública, criando uma metodologia única de atendimento 360º.</p>
+        </div>
+    </section>
+
+    <section id="contato" class="content-box">
+        <div class="container-text">
+            <h2 class="section-title">Contato</h2>
+            <div class="contact-info">
+                <p><strong><i class="fas fa-map-marker-alt"></i> Endereço:</strong> Rua Exemplo, 123 - Centro</p>
+                <p><strong><i class="fas fa-envelope"></i> E-mail:</strong> contato@amandaassessoria.com.br</p>
+                <p><strong><i class="fas fa-phone"></i> Telefone:</strong> (11) 4444-4444</p>
+                <a href="https://wa.me/SEUNUMERO" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Amanda Assessoria. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
